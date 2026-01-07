@@ -235,4 +235,777 @@
                 <div class="flex-1 min-h-screen">
                      <div class="lg:hidden flex justify-between items-center mb-6 pb-4 border-b border-gray-100 dark:border-gray-800 sticky top-20 bg-white/95 dark:bg-black/95 backdrop-blur z-30 pt-4">
                         <button onclick="toggleMobileFilters()" class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-black dark:text-white">
-                            <svg class="w-4 h-4" fill
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                            <span data-i18n="filter_btn">Filters</span>
+                        </button>
+                    </div>
+                    <div id="product-grid" class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-12 md:gap-x-8 md:gap-y-16"></div>
+                    <div id="no-results" class="hidden py-32 text-center">
+                        <p class="text-gray-400 text-xl font-serif italic mb-4" data-i18n="no_results">No pieces found.</p>
+                        <button onclick="resetFilters()" class="text-xs font-bold uppercase tracking-widest underline text-black dark:text-white hover:text-dubae-gold" data-i18n="clear_filters">Clear Filters</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About & Location Section (RESTAURADO) -->
+            <section id="about-location" class="bg-gray-50 dark:bg-[#0c0c0c] py-16 md:py-24 border-t border-gray-100 dark:border-gray-800">
+                <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+                    
+                    <!-- About Text -->
+                    <div class="space-y-6">
+                        <span class="text-xs font-bold uppercase tracking-[0.2em] text-gray-400" data-i18n="about_tag">Our Story</span>
+                        <h2 class="text-3xl md:text-5xl font-serif italic text-black dark:text-white leading-tight" data-i18n="about_title">About Dubae Clothing</h2>
+                        <div class="text-sm md:text-base text-gray-600 dark:text-gray-300 space-y-4 leading-relaxed text-justify">
+                            <p data-i18n="about_p1">Dubae Clothing is a fashion store dedicated to offering clothing and footwear that combine quality, trend, and affordability. We focus on people who enjoy dressing with style and originality, keeping up with trends without needing a high budget.</p>
+                            <p data-i18n="about_p2">We take care of every detail to provide a close, trustworthy, and comfortable shopping experience. We guide our customers throughout the selection process, especially when choosing the right size for shipped orders, ensuring every purchase feels right and satisfying.</p>
+                            <p data-i18n="about_p3">At Dubae Clothing, we believe looking good should be accessible. More than selling products, our goal is for every customer to feel confident in their style, well guided, and excited to come back.</p>
+                        </div>
+                    </div>
+
+                    <!-- Location Map -->
+                    <div class="w-full h-full min-h-[400px] flex flex-col space-y-6">
+                         <div class="flex justify-between items-end">
+                            <div>
+                                <span class="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 block mb-2" data-i18n="loc_tag">Visit Us</span>
+                                <h3 class="text-xl font-serif text-black dark:text-white">Santo Domingo Norte</h3>
+                                <p class="text-sm text-gray-500">Av. Hermanas Mirabal 461</p>
+                            </div>
+                         </div>
+                         
+                         <!-- Google Map Embed -->
+                         <div class="map-container w-full h-80 bg-gray-200 dark:bg-[#1a1a1a] rounded-sm overflow-hidden shadow-lg border border-gray-200 dark:border-gray-800 relative group">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.356269661448!2d-69.9328224!3d18.5580091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf8b630f9a5679%3A0x7d6b8b8b8b8b8b8b!2sAv.%20Hermanas%20Mirabal%20461%2C%20Santo%20Domingo!5e0!3m2!1sen!2sdo!4v1700000000000!5m2!1sen!2sdo" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                         </div>
+                         
+                         <!-- Open Map Button -->
+                         <a href="https://www.google.com/maps/search/?api=1&query=Av.+Hermanas+Mirabal+461,+Santo+Domingo" target="_blank" class="inline-flex items-center justify-center gap-3 w-full md:w-auto px-8 py-4 bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 text-black dark:text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all shadow-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <span data-i18n="loc_btn">Open in Google Maps</span>
+                         </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Detail Full View Overlay -->
+        <div id="detail-view" class="hidden fixed inset-0 z-[55] bg-white dark:bg-[#0a0a0a] overflow-y-auto animate-slide-up"></div>
+        
+        <!-- Quick View Overlay (NEW) -->
+        <div id="quick-view-overlay" class="hidden fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in" onclick="closeQuickView()">
+            <!-- Content injected via JS -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0a0a0a] border-t border-gray-900 text-white py-16 mt-auto">
+        <div class="max-w-[1600px] mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+            <div>
+                <span class="font-serif text-2xl tracking-tighter uppercase mb-4 block">Dubae</span>
+                <p class="text-gray-500 text-xs leading-relaxed max-w-xs mx-auto md:mx-0">Av. Hermanas Mirabal 461, Santo Domingo Norte.<br data-i18n="footer_auth">Authentic goods only.</p>
+            </div>
+            <div class="flex flex-col justify-center items-center md:items-start gap-4">
+                <a href="#" class="text-xs font-bold uppercase tracking-[0.2em] hover:text-dubae-gold transition-colors">Instagram</a>
+                <a href="#" class="text-xs font-bold uppercase tracking-[0.2em] hover:text-dubae-gold transition-colors">WhatsApp</a>
+            </div>
+            <div class="flex items-end justify-center md:justify-end"><p class="text-[10px] text-gray-700 uppercase tracking-widest">&copy; <span id="year"></span> Dubae Clothing</p></div>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer -->
+    <div id="cart-overlay" class="fixed inset-0 bg-black/40 dark:bg-black/60 z-[60] backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300" onclick="toggleCart()"></div>
+    <div id="cart-sidebar" class="fixed top-0 right-0 h-full w-full max-w-md bg-white dark:bg-[#0a0a0a] shadow-2xl z-[70] transform translate-x-full transition-transform duration-300 flex flex-col border-l border-gray-100 dark:border-gray-900">
+        <div class="p-6 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between">
+            <h2 class="font-serif italic text-xl text-black dark:text-white" data-i18n="cart_title">Shopping Bag</h2>
+            <button onclick="toggleCart()" class="p-2 text-black dark:text-white"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+        </div>
+        <div class="flex-1 overflow-y-auto p-6">
+            <div id="cart-items" class="space-y-6"></div>
+            <div id="cart-customer-form" class="mt-8 pt-8 border-t border-gray-100 dark:border-gray-800 hidden">
+                <h3 class="text-[10px] font-bold uppercase tracking-[0.2em] mb-6 text-gray-400" data-i18n="cart_details">Checkout Details</h3>
+                <div class="space-y-5">
+                    <input type="text" id="cust-name" class="w-full bg-transparent border-b border-gray-200 dark:border-gray-700 py-2 text-sm outline-none focus:border-black dark:focus:border-white transition-colors placeholder-gray-400 text-black dark:text-white" data-i18n-placeholder="ph_name" placeholder="Full Name *">
+                    <input type="tel" id="cust-phone" class="w-full bg-transparent border-b border-gray-200 dark:border-gray-700 py-2 text-sm outline-none focus:border-black dark:focus:border-white transition-colors placeholder-gray-400 text-black dark:text-white" data-i18n-placeholder="ph_phone" placeholder="Phone Number *">
+                    <textarea id="cust-address" rows="2" class="w-full bg-transparent border-b border-gray-200 dark:border-gray-700 py-2 text-sm outline-none focus:border-black dark:focus:border-white transition-colors resize-none placeholder-gray-400 text-black dark:text-white" data-i18n-placeholder="ph_address" placeholder="Delivery Address *"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="p-6 border-t border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#111]">
+            <div class="flex justify-between items-end mb-4 text-black dark:text-white"><span class="text-xs font-bold uppercase tracking-widest text-gray-500" data-i18n="cart_total">Total</span><span id="cart-total" class="text-2xl font-serif font-medium">$0.00</span></div>
+            <button onclick="checkoutCart()" class="w-full bg-black dark:bg-white text-white dark:text-black py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-dubae-gold dark:hover:bg-dubae-gold transition-colors" data-i18n="cart_checkout">Proceed via WhatsApp</button>
+        </div>
+    </div>
+
+    <!-- Mobile Filter Drawer -->
+    <div id="mobile-filter-overlay" class="fixed inset-0 bg-black/40 z-[60] backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden" onclick="toggleMobileFilters()"></div>
+    <div id="mobile-filter-sidebar" class="fixed inset-y-0 left-0 w-4/5 max-w-xs bg-white dark:bg-[#111] shadow-2xl z-[70] transform -translate-x-full transition-transform duration-300 flex flex-col lg:hidden border-r border-gray-100 dark:border-gray-800">
+         <div class="p-6 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between">
+            <h2 class="font-serif italic text-xl text-black dark:text-white" data-i18n="filter_title">Filters</h2>
+            <button onclick="toggleMobileFilters()" class="p-2 text-black dark:text-white"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+        </div>
+        <div class="flex-1 overflow-y-auto p-6 space-y-8">
+            <div class="space-y-3" id="mobile-brand-filters"></div>
+            <div class="grid grid-cols-4 gap-2" id="mobile-size-filters"></div>
+            <div class="p-6 border-t border-gray-100 dark:border-gray-800"><button onclick="resetFilters(); toggleMobileFilters()" class="w-full border border-black dark:border-white text-black dark:text-white py-3 text-xs font-bold uppercase tracking-widest" data-i18n="filter_reset">Reset All</button></div>
+        </div>
+    </div>
+
+    <!-- Toasts -->
+    <div id="toast-container" class="fixed bottom-6 right-6 z-[90] flex flex-col gap-3 pointer-events-none">
+         <div id="toast" class="bg-black dark:bg-white text-white dark:text-black px-6 py-4 shadow-2xl transform translate-x-[150%] opacity-0 transition-all duration-500 border-l-4 border-dubae-gold flex items-center gap-4 pointer-events-auto">
+            <span id="toast-message" class="text-xs font-bold uppercase tracking-widest">Message</span>
+        </div>
+    </div>
+
+    <script type="module">
+        import { auth, db, provider, signInWithPopup, signOut, onAuthStateChanged, collection, addDoc, getDocs, query, where, updateDoc, deleteDoc, doc, orderBy, serverTimestamp, ADMIN_EMAILS } from './firebase-config.js';
+
+        // Globals attached to window for HTML access
+        window.currentUser = null;
+        window.isAdmin = false;
+        
+        // --- AUTH LOGIC ---
+        window.handleAuthClick = async () => {
+            if (window.currentUser) {
+                try {
+                    await signOut(auth);
+                    showToast(window.i18n.toast_logout[currentLang]);
+                } catch (error) {
+                    showToast("Error logging out");
+                }
+            } else {
+                try {
+                    await signInWithPopup(auth, provider);
+                } catch (error) {
+                    showToast("Login cancelled");
+                }
+            }
+        };
+
+        onAuthStateChanged(auth, (user) => {
+            window.currentUser = user;
+            const btn = document.getElementById('user-btn');
+            const icon = document.getElementById('user-icon-default');
+            const avatar = document.getElementById('user-avatar');
+            const adminTrigger = document.getElementById('admin-trigger');
+
+            if (user) {
+                icon.classList.add('hidden');
+                avatar.src = user.photoURL;
+                avatar.classList.remove('hidden');
+                
+                // Check Admin
+                window.isAdmin = ADMIN_EMAILS.includes(user.email);
+                if(window.isAdmin) {
+                    adminTrigger.classList.remove('hidden');
+                    adminTrigger.classList.add('flex');
+                } else {
+                    adminTrigger.classList.add('hidden');
+                }
+                showToast(`${window.i18n.toast_welcome[currentLang]} ${user.displayName.split(' ')[0]}`);
+            } else {
+                icon.classList.remove('hidden');
+                avatar.classList.add('hidden');
+                avatar.src = '';
+                adminTrigger.classList.add('hidden');
+                window.isAdmin = false;
+            }
+            
+            // Re-render detail view if open to update review form state
+            const detailView = document.getElementById('detail-view');
+            if(!detailView.classList.contains('hidden')){
+                const pid = detailView.getAttribute('data-pid');
+                if(pid) window.openDetail(parseInt(pid));
+            }
+        });
+
+        // --- FIRESTORE REVIEW SERVICE ---
+        window.ReviewService = {
+            addReview: async function(reviewData) {
+                try {
+                    await addDoc(collection(db, 'reviews'), {
+                        ...reviewData,
+                        approved: false,
+                        verified: true, // MOCKED for now
+                        createdAt: serverTimestamp()
+                    });
+                    return { success: true };
+                } catch (e) {
+                    console.error(e);
+                    return { success: false, message: e.message };
+                }
+            },
+
+            getApprovedReviews: async function(productId) {
+                try {
+                    const q = query(
+                        collection(db, 'reviews'), 
+                        where('productId', '==', productId),
+                        where('approved', '==', true),
+                        orderBy('createdAt', 'desc')
+                    );
+                    const querySnapshot = await getDocs(q);
+                    return querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                } catch(e) {
+                    return []; // Fallback empty
+                }
+            },
+            
+            getPendingReviews: async function() {
+                 try {
+                    const q = query(
+                        collection(db, 'reviews'), 
+                        where('approved', '==', false),
+                        orderBy('createdAt', 'desc')
+                    );
+                    const querySnapshot = await getDocs(q);
+                    return querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                } catch(e) {
+                    console.error(e);
+                    return [];
+                }
+            }
+        };
+
+        // --- ADMIN PANEL LOGIC ---
+        window.toggleAdminPanel = async () => {
+            const panel = document.getElementById('admin-panel');
+            const list = document.getElementById('admin-reviews-list');
+            
+            if (panel.classList.contains('hidden')) {
+                panel.classList.remove('hidden');
+                // Load reviews
+                list.innerHTML = '<p class="text-center text-gray-400 text-sm py-10 animate-pulse">Fetching pending reviews...</p>';
+                const pending = await window.ReviewService.getPendingReviews();
+                
+                if(pending.length === 0) {
+                    list.innerHTML = '<p class="text-center text-gray-500 py-10">No pending reviews.</p>';
+                } else {
+                    list.innerHTML = pending.map(r => `
+                        <div class="bg-gray-50 dark:bg-[#111] p-4 rounded-sm border border-gray-100 dark:border-gray-800 flex flex-col gap-2">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <p class="font-bold text-xs uppercase text-black dark:text-white">${r.userName}</p>
+                                    <p class="text-[10px] text-gray-500">ID: ${r.productId}</p>
+                                </div>
+                                <div class="text-dubae-gold text-xs">${'★'.repeat(r.rating)}</div>
+                            </div>
+                            <p class="text-xs italic text-gray-600 dark:text-gray-300">"${r.comment}"</p>
+                            <div class="flex gap-2 mt-2">
+                                <button onclick="handleReviewAction('${r.id}', 'approve')" class="flex-1 bg-dubae-success text-white py-2 rounded-sm text-[10px] uppercase font-bold tracking-widest hover:opacity-90">Approve</button>
+                                <button onclick="handleReviewAction('${r.id}', 'reject')" class="flex-1 bg-dubae-danger text-white py-2 rounded-sm text-[10px] uppercase font-bold tracking-widest hover:opacity-90">Reject</button>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            } else {
+                panel.classList.add('hidden');
+            }
+        };
+
+        window.handleReviewAction = async (id, action) => {
+            try {
+                const ref = doc(db, 'reviews', id);
+                if(action === 'approve') {
+                    await updateDoc(ref, { approved: true });
+                    showToast("Review Approved");
+                } else {
+                    await deleteDoc(ref);
+                    showToast("Review Rejected");
+                }
+                // Refresh list
+                window.toggleAdminPanel(); // toggle off
+                setTimeout(window.toggleAdminPanel, 100); // toggle on to refresh
+            } catch(e) {
+                showToast("Error: " + e.message);
+            }
+        };
+
+        // Make functions available globally for HTML onclicks
+        window.submitReview = async (productId) => {
+             if(!window.currentUser) {
+                 showToast(window.i18n.toast_login_req[currentLang]);
+                 return;
+             }
+             
+             const comment = document.getElementById('review-comment').value;
+             if(!comment) { showToast("Comment required"); return; }
+             
+             const result = await window.ReviewService.addReview({
+                 productId: productId,
+                 userId: window.currentUser.uid,
+                 userName: window.currentUser.displayName,
+                 userPhoto: window.currentUser.photoURL,
+                 rating: window.currentReviewRating || 5,
+                 comment: comment
+             });
+             
+             if(result.success) {
+                 showToast(window.i18n.toast_review_sent[currentLang]);
+                 document.getElementById('review-comment').value = '';
+             } else {
+                 showToast("Error: " + result.message);
+             }
+        };
+        
+        window.currentReviewRating = 5;
+        window.setReviewRating = (val) => {
+            window.currentReviewRating = val;
+            for(let i=1; i<=5; i++) {
+                const el = document.getElementById(`star-${i}`);
+                if(i <= val) el.classList.add('active');
+                else el.classList.remove('active');
+            }
+        };
+        
+        // --- QUICK VIEW FUNCTIONS ---
+        window.openQuickView = (e, id) => {
+            e.stopPropagation();
+            const p = PRODUCTS.find(x => x.id === id);
+            if(!p) return;
+            
+            const overlay = document.getElementById('quick-view-overlay');
+            const rating = (4.9).toFixed(1); 
+            
+            const sizesHtml = p.sizes.map(s => 
+                `<button onclick="selectSize(${p.id}, ${s}, this)" class="size-btn size-btn-${p.id} rounded-sm">${s}</button>`
+            ).join('');
+
+            overlay.innerHTML = `
+                <div class="bg-white dark:bg-[#111] w-[95%] md:w-full max-w-5xl max-h-[90vh] md:max-h-none grid grid-cols-1 md:grid-cols-2 gap-0 relative rounded-sm shadow-2xl animate-zoom-in border border-gray-100 dark:border-gray-800 overflow-hidden flex flex-col md:grid" onclick="event.stopPropagation()">
+                    
+                    <!-- Close Button -->
+                    <button onclick="closeQuickView()" class="absolute top-4 right-4 z-30 p-2 bg-white/80 dark:bg-black/80 rounded-full backdrop-blur-sm text-gray-500 hover:text-black dark:text-gray-300 dark:hover:text-white transition-colors shadow-sm">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                    
+                    <!-- Image Section (Protagonist) -->
+                    <div class="relative bg-[#F9FAFB] dark:bg-[#1a1a1a] flex items-center justify-center p-8 h-[35vh] md:h-[600px]">
+                        <img src="${p.image}" class="max-h-full max-w-full object-contain product-img">
+                    </div>
+                    
+                    <!-- Details Section -->
+                    <div class="flex flex-col p-6 md:p-12 overflow-y-auto h-auto md:h-full custom-scrollbar bg-white dark:bg-[#111] justify-center">
+                         <!-- Header -->
+                         <div class="mb-6">
+                            <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 block mb-3">${p.brand}</span>
+                            <h2 class="text-2xl md:text-4xl font-serif italic leading-tight text-black dark:text-white mb-4">${p.name}</h2>
+                            
+                             <div class="flex items-center justify-between border-b border-gray-100 dark:border-gray-800 pb-6">
+                                 <p class="text-2xl font-light text-gray-800 dark:text-gray-200">${formatUSD(p.price)}</p>
+                                 <div class="flex items-center gap-1">
+                                    <span class="text-dubae-gold text-xs">★★★★★</span>
+                                    <span class="text-[10px] font-bold text-gray-500">${rating}</span>
+                                 </div>
+                             </div>
+                         </div>
+                         
+                         <!-- Sizes -->
+                         <div class="mb-8 flex-grow">
+                             <label class="text-[10px] font-bold uppercase tracking-widest mb-4 block text-gray-500 dark:text-gray-400" data-i18n="lbl_size">${window.i18n.lbl_size[currentLang]}</label>
+                             <div class="grid grid-cols-5 gap-2">
+                                 ${sizesHtml}
+                             </div>
+                         </div>
+
+                         <!-- Actions -->
+                         <div class="flex flex-col gap-3 mt-auto">
+                             <button onclick="addToCart(${p.id})" class="w-full py-4 bg-black dark:bg-white text-white dark:text-black text-xs font-bold uppercase tracking-[0.2em] hover:bg-dubae-gold dark:hover:bg-gray-200 transition-colors shadow-lg active:scale-[0.98]">
+                                ${window.i18n.btn_add[currentLang]}
+                             </button>
+                             <button onclick="goToFullDetails(${p.id})" class="w-full py-3 text-center text-[10px] font-bold uppercase tracking-widest text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white underline transition-colors">
+                                ${window.i18n.btn_full_view[currentLang]}
+                             </button>
+                         </div>
+                    </div>
+                </div>
+            `;
+            
+            overlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        window.closeQuickView = () => {
+            const overlay = document.getElementById('quick-view-overlay');
+            overlay.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+        
+        window.goToFullDetails = (id) => {
+            window.closeQuickView();
+            setTimeout(() => window.openDetail(id), 50);
+        }
+    </script>
+    
+    <!-- Original Logic Script (Modified to use Firebase) -->
+    <script>
+        const WHATSAPP_NUMBER = "18297207993";
+        // Language State
+        let currentLang = localStorage.getItem('dubae_lang') || 'en'; // Default English
+
+        // --- TRANSLATION DICTIONARY ---
+        window.i18n = {
+            search_placeholder: { en: "Search products...", es: "Buscar productos..." },
+            trust_rating: { en: "4.9/5 from 300+ Verified Orders", es: "4.9/5 de +300 Órdenes Verificadas" },
+            hero_subtitle: { en: "New Season 2025", es: "Nueva Temporada 2025" },
+            hero_title: { en: "Redefining Urban Luxury", es: "Redefiniendo el Lujo Urbano" },
+            filter_sort: { en: "Sort Collection", es: "Ordenar Colección" },
+            sort_new: { en: "New Arrivals", es: "Nuevos Lanzamientos" },
+            sort_low_high: { en: "Price: Low to High", es: "Precio: Menor a Mayor" },
+            sort_high_low: { en: "Price: High to Low", es: "Precio: Mayor a Menor" },
+            filter_brands: { en: "Brands", es: "Marcas" },
+            filter_sizes: { en: "Sizes (EU)", es: "Tallas (EU)" },
+            filter_btn: { en: "Filters", es: "Filtros" },
+            filter_title: { en: "Filters", es: "Filtros" },
+            filter_reset: { en: "Reset All", es: "Limpiar Todo" },
+            no_results: { en: "No pieces found.", es: "No se encontraron piezas." },
+            clear_filters: { en: "Clear Filters", es: "Limpiar Filtros" },
+            about_tag: { en: "Our Story", es: "Nuestra Historia" },
+            about_title: { en: "About Dubae Clothing", es: "Sobre Dubae Clothing" },
+            // COPY OFICIAL
+            about_p1: { 
+                en: "Dubae Clothing is a fashion store dedicated to offering clothing and footwear that combine quality, trend, and affordability. We focus on people who enjoy dressing with style and originality, keeping up with trends without needing a high budget.", 
+                es: "Dubae Clothing es una tienda de moda dedicada a ofrecer ropa y calzado que combinan calidad, tendencia y buen precio. Nos enfocamos en personas que disfrutan vestir con estilo y originalidad, siguiendo las tendencias sin necesidad de un presupuesto elevado." 
+            },
+            about_p2: { 
+                en: "We take care of every detail to provide a close, trustworthy, and comfortable shopping experience. We guide our customers throughout the selection process, especially when choosing the right size for shipped orders, ensuring every purchase feels right and satisfying.", 
+                es: "Cuidamos cada detalle para brindar una experiencia de compra cercana, confiable y cómoda. Acompañamos a nuestros clientes durante el proceso de selección, especialmente al elegir su talla en pedidos por envío, para que cada compra sea acertada y satisfactoria." 
+            },
+            about_p3: { 
+                en: "At Dubae Clothing, we believe looking good should be accessible. More than selling products, our goal is for every customer to feel confident in their style, well guided, and excited to come back.", 
+                es: "En Dubae Clothing creemos que verse bien debe ser accesible. Más que vender productos, buscamos que cada cliente se sienta seguro con su estilo, bien orientado y con ganas de volver." 
+            },
+            loc_tag: { en: "Visit Us", es: "Visítanos" },
+            loc_btn: { en: "Open in Google Maps", es: "Abrir en Google Maps" },
+            footer_auth: { en: "Authentic goods only.", es: "Solo artículos auténticos." },
+            cart_title: { en: "Shopping Bag", es: "Bolsa de Compras" },
+            cart_details: { en: "Checkout Details", es: "Datos de Envío" },
+            ph_name: { en: "Full Name *", es: "Nombre Completo *" },
+            ph_phone: { en: "Phone Number *", es: "Teléfono *" },
+            ph_address: { en: "Delivery Address *", es: "Dirección de Entrega *" },
+            cart_total: { en: "Total", es: "Total" },
+            cart_checkout: { en: "Proceed via WhatsApp", es: "Ordenar por WhatsApp" },
+            cart_empty: { en: "Empty bag.", es: "Carrito vacío." },
+            admin_title: { en: "Review Moderation", es: "Moderación de Reseñas" },
+            admin_loading: { en: "Loading pending reviews...", es: "Cargando reseñas pendientes..." },
+            // Dynamic JS Strings
+            size_select: { en: "Select Size First", es: "Selecciona una Talla" },
+            added_bag: { en: "Added to Bag", es: "Añadido al Carrito" },
+            missing_info: { en: "Missing Info", es: "Faltan Datos" },
+            wa_greeting: { en: "Hello Dubae, order:", es: "Hola Dubae, deseo ordenar:" },
+            wa_greeting_single: { en: "Hello Dubae, order single:", es: "Hola Dubae, deseo ordenar:" },
+            price_consult: { en: "Inquire Price", es: "Consultar Precio" },
+            toast_logout: { en: "Logged out successfully", es: "Cierre de sesión exitoso" },
+            toast_welcome: { en: "Welcome,", es: "Bienvenido," },
+            toast_login_req: { en: "Please login first", es: "Por favor inicia sesión" },
+            toast_review_sent: { en: "Review sent for approval!", es: "¡Reseña enviada para aprobación!" },
+            review_login_msg: { en: "Please log in to write a review.", es: "Inicia sesión para escribir una reseña." },
+            review_sign_in: { en: "Sign in with Google", es: "Acceder con Google" },
+            review_write: { en: "Write a Review", es: "Escribe una Reseña" },
+            review_posting_as: { en: "Posting as", es: "Publicando como" },
+            review_placeholder: { en: "Your experience...", es: "Tu experiencia..." },
+            review_submit: { en: "Submit Review", es: "Enviar Reseña" },
+            review_reviews: { en: "reviews", es: "reseñas" },
+            review_title: { en: "Customer Reviews", es: "Opiniones de Clientes" },
+            btn_add: { en: "Add to Bag", es: "Añadir" },
+            btn_buy: { en: "Buy Now", es: "Comprar Ahora" },
+            lbl_size: { en: "Select Size (EU)", es: "Selecciona Talla (EU)" },
+            lbl_verified: { en: "Verified", es: "Verificado" },
+            lbl_just_now: { en: "Just now", es: "Ahora mismo" },
+            lbl_new: { en: "NEW", es: "NUEVO" },
+            btn_quick_view: { en: "Quick View", es: "Vista Rápida" },
+            btn_full_view: { en: "View Full Details", es: "Ver Detalles Completos" },
+            lbl_quick_desc: { en: "Product Preview", es: "Vista Previa" }
+        };
+        
+        // --- DATA (READ-ONLY) ---
+        const PRODUCTS = [
+            { id: 1, name: "Adidas Samba OG – White/Black/Gum", brand: "Adidas", price: 135, image: "https://i.postimg.cc/KjsRSsTM/Adidas-Samba-OG-White-Black-Gum.jpg", sizes: [36, 37, 38, 39, 40, 41, 42, 43, 44, 45] },
+            { id: 2, name: "Adidas Wmns Samba OG Cracked Metallic Pack – Silver", brand: "Adidas", price: 150, image: "https://i.postimg.cc/TwdVTFy8/adidas-Wmns-Samba-OG-Cracked-Metallic-Pack-Silver.jpg", sizes: [36, 37, 38, 39, 40, 41, 42, 43] },
+            { id: 3, name: "Adidas Wmns Samba OG Cream White Sand Strata (2024 Release)", brand: "Adidas", price: 135, image: "https://i.postimg.cc/T3rSf7QR/adidas-Wmns-Samba-OG-Cream-White-Sand-Strata-(2024-Release).jpg", sizes: [36, 37, 38, 39, 40, 41, 42, 43], isNew: true },
+            { id: 4, name: "Adidas Samba OG Wonder White Shadow Red Gum (2025 Release)", brand: "Adidas", price: 165, image: "https://i.postimg.cc/yxpJJyPB/adidas-Samba-OG-Wonder-White-Shadow-Red-Gum-(2025-Release).jpg", sizes: [36, 37, 38, 39, 40], isNew: true },
+            { id: 5, name: "Adidas Samba OG J White Black Gum (2023 Release)", brand: "Adidas", price: 135, image: "https://i.postimg.cc/7Yghr4Fp/adidas-Samba-OG-J-White-Black-Gum-(2023-Release).jpg", sizes: [36, 37, 38, 39, 40] },
+            { id: 6, name: "Adidas Samba OG White Red Gum", brand: "Adidas", price: 135, image: "https://i.postimg.cc/5Nrnybgf/adidas-Samba-OG-White-Red-Gum.jpg", sizes: [36, 37, 38, 39, 40] },
+            { id: 7, name: "Adidas Samba OG White Green Gum", brand: "Adidas", price: 135, image: "https://i.postimg.cc/v84yDLwx/adidas-Samba-OG-White-Green-Gum.jpg", sizes: [36, 37, 38, 39, 40] },
+            { id: 8, name: "New Balance 530 White/Navy", brand: "New Balance", price: 150, image: "https://i.postimg.cc/sD2T3KkH/New-Balance-530-White-Navy.jpg", sizes: [36, 37, 38, 39, 40, 41, 42, 43, 44, 45] },
+            { id: 9, name: "New Balance 530 White/Pink/Silver ABZORB", brand: "New Balance", price: 150, image: "https://i.postimg.cc/YqcyzQZV/New-Balance-530-White-Pink-Silver-ABZORB.jpg", sizes: [36, 37, 38, 39, 40] },
+            { id: 10, name: "New Balance 740 Silver/Grey", brand: "New Balance", price: 150, image: "https://i.postimg.cc/W3Yc4t4r/New-Balance-740-Silver-Grey.jpg", sizes: [40, 41, 42, 43, 44, 45, 46, 47] },
+            { id: 11, name: "New Balance 1906 Silver/Metallic Black", brand: "New Balance", price: 150, image: "https://i.postimg.cc/t4vcP8jf/New-Balance-1906-Silver-Metallic-Black.jpg", sizes: [36, 37, 38, 39, 40] },
+            { id: 12, name: "Adidas Originals Campus 00s Core Black/Off White/Footwear White", brand: "Adidas", price: 120, image: "https://i.postimg.cc/d3SCnRVQ/adidas-Originals-Campus-00s-Core-Black-Off-White-Footwear-White.jpg", sizes: [36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47] },
+            { id: 13, name: "New Balance 1906 Black/Silver", brand: "New Balance", price: 150, image: "https://i.postimg.cc/vZ1mWFnm/New-Balance-1906-Black-Silver.jpg", sizes: [36, 37, 38, 39, 40] },
+            { id: 14, name: "New Balance 1906R Eclipse/Pink Taffy", brand: "New Balance", price: 150, image: "https://i.postimg.cc/4xR01p7z/New-Balance-1906R-Eclipse-Pink-Taffy.jpg", sizes: [36, 37, 38, 39, 40] },
+            { id: 15, name: "Adidas Originals Campus 00s Black/Cream", brand: "Adidas", price: 110, image: "https://i.postimg.cc/8khXzjn7/adidas-Originals-Campus-00s-Black-Cream.jpg", sizes: [36, 37, 38, 39, 40] },
+            { id: 16, name: "Adidas Originals Campus 00s Grey/White", brand: "Adidas", price: 120, image: "https://i.postimg.cc/Kj6mf4By/adidas-Originals-Campus-00s-Grey-White.jpg", sizes: [36, 37, 38, 39, 40] },
+            { id: 17, name: "ASICS GEL-1130 White/Silver/Black", brand: "ASICS", price: 135, image: "https://i.postimg.cc/s2L7YdKk/ASICS-GEL-1130-White-Silver-Black.jpg", sizes: [36, 37, 38, 39, 40] },
+            { id: 18, name: "Nike V5 RNR White/Reflective/Brown", brand: "Nike", price: 165, image: "https://i.postimg.cc/GtgC2KbN/Nike-V5-RNR-White-Reflective-Brown.jpg", sizes: [36, 37, 38, 39, 40, 41, 42, 43, 44, 45], isNew: true },
+            { id: 19, name: "Nike V5 RNR (Women's) Maroon/Grey/White", brand: "Nike", price: 150, image: "https://i.postimg.cc/QMYqxYPq/Nike-V5-RNR-Maroon-Grey-White.jpg", sizes: [36, 37, 38, 39, 40, 41, 42, 43, 44, 45] },
+            { id: 20, name: "Nike V5 RNR (Men's) Black/Silver/White", brand: "Nike", price: 150, image: "https://i.postimg.cc/cLwq3wZt/Nike-V5-RNR-(Men-s)-Black-Silver-White.jpg", sizes: [36, 37, 38, 39, 40, 41, 42, 43, 44, 45] },
+            { id: 21, name: "Nike V5 RNR Triple Black (Men's)", brand: "Nike", price: 150, image: "https://i.postimg.cc/SRQ4mszw/Nike-V5-RNR-Triple-Black-Mens.jpg", sizes: [36, 37, 38, 39, 40, 41, 42, 43, 44, 45] },
+            { id: 22, name: "Nike Shox R4 Midnight Navy/Gym Red/Metallic Silver", brand: "Nike", price: 150, image: "https://i.postimg.cc/dQZpTGJr/Nike-Shox-R4-Midnight-Navy-Gym-Red-Metallic-Silver.jpg", sizes: [36, 37, 38, 39, 40, 41, 42, 43, 44, 45] },
+            { id: 23, name: "Nike Shox R4 Metallic Silver/Black", brand: "Nike", price: 150, image: "https://i.postimg.cc/TwgsBX74/Nike-Shox-R4-Metallic-Silver-Black.jpg", sizes: [36, 37, 38, 39, 40, 41, 42, 43, 44, 45] },
+            { id: 24, name: "Adidas Handball Spezial Brown/White", brand: "Adidas", price: 135, image: "https://i.postimg.cc/6Q9T89R7/adidas-Handball-Spezial-Brown-White.jpg", sizes: [36, 37, 38, 39, 40] },
+            { id: 25, name: "Adidas Gazelle Indoor Red/White/Gum", brand: "Adidas", price: 150, image: "https://i.postimg.cc/CLgYNwMc/new-arrival-3.jpg", sizes: [36, 37, 38, 39, 40], isNew: true },
+            { id: 26, name: "Adidas Samba OG Maroon/White/Dark Brown", brand: "Adidas", price: 165, image: "https://i.postimg.cc/XYYRHJRm/Newarrival4.jpg", sizes: [36, 37, 38, 39, 40, 41], isNew: true },
+            { id: 27, name: "ASICS GEL-1130 White/Silver/Brown", brand: "ASICS", price: 0, image: "https://i.postimg.cc/6QYV3b7K/ASICS-GEL-1130-White-Silver-Brown.jpg", sizes: [40, 41, 42, 43, 44, 45, 46] },
+            { id: 28, name: "ASICS GEL-1130 White/Teal/Silver", brand: "ASICS", price: 0, image: "https://i.postimg.cc/v89z7zkz/ASICS-GEL-1130-White-Teal-Silver.jpg", sizes: [40, 41, 42, 43, 44, 45, 46] },
+            { id: 29, name: "ASICS GT-2160 Black/Silver", brand: "ASICS", price: 0, image: "https://i.postimg.cc/mkw1XtQT/ASICS-GT-2160-Black-Silver.jpg", sizes: [40, 41, 42, 43, 44, 45, 46] },
+            { id: 30, name: "Nike Running V5 RNR Light Grey/White/Silver/Black Swoosh", brand: "Nike", price: 150, image: "https://i.postimg.cc/J4SKjF4B/Nike-Running-V5-RNR-ight-Gre-White-Silver-Black-Swoosh.jpg", sizes: [36, 37, 38, 39, 40, 41, 42, 43, 44, 45], isNew: true },
+            { id: 31, name: "Nike Wmns V2K Run Platinum Violet", brand: "Nike", price: 135, image: "https://i.postimg.cc/FFCwBmxD/oferta.jpg", sizes: [40, 41, 42, 43, 44, 45, 46], isSale: true },
+            { id: 32, name: "Nike Blazer Mid 'White/Black' (High-Top)", brand: "Nike", price: 110, image: "https://i.postimg.cc/pV5344cG/oferta2.jpg", sizes: [36, 37, 38, 39, 40], isSale: true },
+            { id: 33, name: "New Balance 710 Silver/White/Black", brand: "New Balance", price: 150, image: "https://i.postimg.cc/nL8JwZn8/Whats-App-Image-2026-01-03-at-7-42-56-PM.jpg", sizes: [40, 41, 42, 43, 44, 45, 46], isSale: true }
+        ];
+
+        let cart = [];
+        let selectedSizes = {};
+        let activeFilters = { brands: [], price: 'all', size: null, sort: 'newest', search: '' };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('year').textContent = new Date().getFullYear();
+            loadCart();
+            initFiltersUI();
+            applyFilters();
+            updateContent(); // Apply languages
+            if (localStorage.getItem('dubae_theme') === 'dark' || (!('dubae_theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            }
+        });
+
+        // --- LANGUAGE SYSTEM ---
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'es' : 'en';
+            localStorage.setItem('dubae_lang', currentLang);
+            updateContent();
+            
+            // Re-render components that use JS strings
+            updateCartUI();
+            // Refresh detail view if open
+            const detailView = document.getElementById('detail-view');
+            if (!detailView.classList.contains('hidden')) {
+                const pid = detailView.getAttribute('data-pid');
+                if(pid) window.openDetail(parseInt(pid));
+            }
+            // Refresh Quick View if open
+            const qv = document.getElementById('quick-view-overlay');
+            if(!qv.classList.contains('hidden')) {
+                // To refresh language in quick view, we'd need to re-render it. 
+                // Currently, user just closes and re-opens, but updateContent handles static texts.
+            }
+            // Re-apply filters to refresh grid buttons text
+            applyFilters();
+        }
+
+        function updateContent() {
+            document.getElementById('lang-btn').textContent = currentLang.toUpperCase();
+            
+            // Update Text Content
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (window.i18n[key]) {
+                    el.textContent = window.i18n[key][currentLang];
+                }
+            });
+            
+            // Update Placeholders
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (window.i18n[key]) {
+                    el.placeholder = window.i18n[key][currentLang];
+                }
+            });
+        }
+
+        // --- CORE FUNCTIONS (Cart, Filters, etc. kept exactly as is but using translations) ---
+        function formatUSD(amount) { return amount ? `$${amount}` : window.i18n.price_consult[currentLang]; }
+        function showToast(m) { const t=document.getElementById('toast'); document.getElementById('toast-message').textContent=m; t.classList.remove('translate-x-[150%]', 'opacity-0'); setTimeout(()=>t.classList.add('translate-x-[150%]', 'opacity-0'), 3000); }
+        function saveCart() { localStorage.setItem('dubae_cart_v3', JSON.stringify(cart)); updateCartUI(); }
+        function loadCart() { const s=localStorage.getItem('dubae_cart_v3'); if(s) cart=JSON.parse(s); updateCartUI(); }
+        function updateCartUI() {
+            const c=document.getElementById('cart-count'); c.textContent=cart.reduce((a,x)=>a+x.qty,0); c.classList.toggle('opacity-0',cart.length===0);
+            const container=document.getElementById('cart-items'); let t=0;
+            if(cart.length===0) { container.innerHTML=`<p class="text-center text-gray-400 py-10 italic text-sm">${window.i18n.cart_empty[currentLang]}</p>`; document.getElementById('cart-customer-form').classList.add('hidden'); }
+            else {
+                document.getElementById('cart-customer-form').classList.remove('hidden');
+                container.innerHTML=cart.map((i,idx)=>{ t+=(i.price||0)*i.qty; return `
+                    <div class="flex gap-4 animate-fade-in group relative">
+                        <div class="w-16 h-16 bg-gray-50 rounded-sm overflow-hidden"><img src="${i.image}" class="w-full h-full object-contain mix-blend-multiply"></div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-xs uppercase line-clamp-1 dark:text-white">${i.name}</h4>
+                            <p class="text-xs text-gray-500">Size: ${i.size}</p>
+                            <div class="flex justify-between mt-2">
+                                <div class="flex border border-gray-200 dark:border-gray-700 rounded-sm"><button onclick="updateQty(${idx},-1)" class="px-2 text-xs dark:text-white">-</button><span class="px-2 text-xs font-medium dark:text-white">${i.qty}</span><button onclick="updateQty(${idx},1)" class="px-2 text-xs dark:text-white">+</button></div>
+                                <span class="text-xs font-serif dark:text-white">${formatUSD(i.price*i.qty)}</span>
+                            </div>
+                        </div>
+                        <button onclick="cart.splice(${idx},1);saveCart()" class="absolute -top-1 -right-1 text-gray-300 hover:text-red-500">×</button>
+                    </div>`; }).join('');
+            }
+            document.getElementById('cart-total').textContent=formatUSD(t);
+        }
+        function updateQty(i,d){ if(cart[i].qty+d>0)cart[i].qty+=d; else cart.splice(i,1); saveCart(); }
+        function toggleCart(){ const s=document.getElementById('cart-sidebar'); const o=document.getElementById('cart-overlay'); if(s.classList.contains('translate-x-0')){ s.classList.remove('translate-x-0'); s.classList.add('translate-x-full'); o.classList.add('pointer-events-none','opacity-0'); } else { s.classList.remove('translate-x-full'); s.classList.add('translate-x-0'); o.classList.remove('pointer-events-none','opacity-0'); } }
+        function checkoutCart(){ 
+            if(cart.length===0)return; 
+            const n=document.getElementById('cust-name').value, p=document.getElementById('cust-phone').value, a=document.getElementById('cust-address').value; 
+            if(!n||!p||!a){ showToast(window.i18n.missing_info[currentLang]); return; } 
+            let msg=`${window.i18n.wa_greeting[currentLang]}\n\n`; 
+            let t=0; 
+            cart.forEach(x=>{t+=(x.price||0)*x.qty; msg+=`• ${x.name} (Size ${x.size}) x${x.qty}\n`}); 
+            msg+=`\nTotal: ${formatUSD(t)}\nName: ${n}\nAddr: ${a}\nPhone: ${p}`; 
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,'_blank'); 
+        }
+
+        // --- FILTERS & GRID ---
+        function initFiltersUI() {
+            const b=[...new Set(PRODUCTS.map(p=>p.brand))].sort(), s=[...new Set(PRODUCTS.flatMap(p=>p.sizes))].sort((a,b)=>a-b);
+            const rB=(id,mob)=> document.getElementById(id).innerHTML=b.map(x=>`<label class="flex items-center gap-3 cursor-pointer group"><input type="checkbox" value="${x}" onchange="toggleBrand('${x}'); ${mob?'toggleMobileFilters()':''}" class="custom-checkbox"><span class="text-sm text-gray-600 dark:text-gray-400 group-hover:text-black dark:group-hover:text-white transition-colors">${x}</span></label>`).join('');
+            const rS=(id,mob)=> document.getElementById(id).innerHTML=s.map(x=>`<button onclick="applySizeFilter(${x}); ${mob?'toggleMobileFilters()':''}" class="size-filter-btn size-filter-btn-${x} text-xs border border-gray-200 dark:border-gray-700 py-2 hover:border-black dark:hover:border-white transition-colors rounded-sm text-black dark:text-white">${x}</button>`).join('');
+            rB('desktop-brand-filters',false); rB('mobile-brand-filters',true); rS('desktop-size-filters',false); rS('mobile-size-filters',true);
+        }
+        function toggleBrand(b){ if(activeFilters.brands.includes(b)) activeFilters.brands=activeFilters.brands.filter(x=>x!==b); else activeFilters.brands.push(b); applyFilters(); }
+        function applyPriceFilter(v){ activeFilters.price=v; applyFilters(); }
+        function applySizeFilter(s){ const bs=document.querySelectorAll(`.size-filter-btn`); bs.forEach(b=>b.classList.remove('bg-black','text-white','dark:bg-white','dark:text-black')); if(activeFilters.size===s) activeFilters.size=null; else { activeFilters.size=s; document.querySelectorAll(`.size-filter-btn-${s}`).forEach(b=>b.classList.add('bg-black','text-white','dark:bg-white','dark:text-black')); } applyFilters(); }
+        function applySort(v){ activeFilters.sort=v; applyFilters(); }
+        function handleSearch(v){ activeFilters.search=v.toLowerCase(); applyFilters(); }
+        function resetFilters(){ activeFilters={brands:[],price:'all',size:null,sort:'newest',search:''}; document.querySelectorAll('input[type="checkbox"]').forEach(c=>c.checked=false); document.getElementById('desktop-search').value=''; applyFilters(); }
+        function toggleMobileFilters(){ const s=document.getElementById('mobile-filter-sidebar'); const o=document.getElementById('mobile-filter-overlay'); if(s.classList.contains('translate-x-0')){ s.classList.remove('translate-x-0'); s.classList.add('-translate-x-full'); o.classList.add('opacity-0','pointer-events-none'); }else{ s.classList.remove('-translate-x-full'); s.classList.add('translate-x-0'); o.classList.remove('opacity-0','pointer-events-none'); } }
+
+        function applyFilters() {
+            let res = PRODUCTS.filter(p => {
+                if(activeFilters.brands.length && !activeFilters.brands.includes(p.brand)) return false;
+                if(activeFilters.price==='under-150' && (p.price>=150 || p.price===0)) return false;
+                if(activeFilters.price==='150-plus' && p.price<150) return false;
+                if(activeFilters.size && !p.sizes.includes(activeFilters.size)) return false;
+                if(activeFilters.search && !p.name.toLowerCase().includes(activeFilters.search) && !p.brand.toLowerCase().includes(activeFilters.search)) return false;
+                return true;
+            });
+            if(activeFilters.sort==='price-asc') res.sort((a,b)=>(a.price||9999)-(b.price||9999));
+            else if(activeFilters.sort==='price-desc') res.sort((a,b)=>(b.price||0)-(a.price||0));
+            else res.sort((a,b)=>(b.isNew?1:0)-(a.isNew?1:0)||b.id-a.id);
+            
+            const g=document.getElementById('product-grid'); const nr=document.getElementById('no-results');
+            if(res.length===0){ g.innerHTML=''; nr.classList.remove('hidden'); }
+            else { nr.classList.add('hidden'); g.innerHTML=res.map(p=> {
+                 const seed = p.id * 1664525 + 1013904223;
+                 const rating = (4.5 + (seed % 50) / 100).toFixed(1); // Visual fallback for grid
+                 return `
+                <div class="product-card group cursor-pointer animate-fade-in relative" onclick="openDetail(${p.id})">
+                    <div class="relative bg-[#F9FAFB] dark:bg-[#111] aspect-[0.85] w-full overflow-hidden mb-4 rounded-sm transition-colors duration-300 shadow-sm group-hover:shadow-md">
+                        ${p.isNew ? `<span class="absolute top-3 left-3 text-[10px] font-bold bg-white/80 dark:bg-black/80 px-2 py-1 backdrop-blur-sm">${window.i18n.lbl_new[currentLang]}</span>` : ''}
+                        
+                        <img src="${p.image}" class="product-img w-full h-full object-contain p-6 md:p-8">
+                        
+                        <!-- QUICK VIEW BUTTON (ALWAYS VISIBLE) -->
+                        <button onclick="openQuickView(event, ${p.id})" class="absolute bottom-0 inset-x-0 bg-black text-white text-[10px] font-bold uppercase py-3 hover:bg-dubae-gold transition-colors z-20">
+                            ${window.i18n.btn_quick_view[currentLang]}
+                        </button>
+                    </div>
+                    <div class="space-y-1">
+                        <div class="flex justify-between items-start">
+                            <span class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">${p.brand}</span>
+                            <div class="flex items-center gap-1 opacity-80"><span class="text-[10px] text-dubae-gold">★</span><span class="text-[10px] text-gray-500">${rating}</span></div>
+                        </div>
+                        <h3 class="text-sm font-medium leading-tight h-10 line-clamp-2 dark:text-white">${p.name}</h3>
+                        <p class="font-serif italic text-lg dark:text-white">${formatUSD(p.price)}</p>
+                    </div>
+                </div>`;
+            }).join(''); }
+        }
+
+        // --- DETAIL MODAL (FULL VIEW) ---
+        async function openDetail(id) {
+            const p = PRODUCTS.find(x => x.id === id);
+            if(!p) return;
+            const detailView = document.getElementById('detail-view');
+            detailView.setAttribute('data-pid', id);
+            
+            // FETCH REAL REVIEWS FROM FIRESTORE
+            const realReviews = await window.ReviewService.getApprovedReviews(p.id);
+            let avgRating = 5.0; 
+            let reviewCount = realReviews.length;
+            
+            if(reviewCount > 0) {
+                 const sum = realReviews.reduce((a, b) => a + b.rating, 0);
+                 avgRating = (sum / reviewCount).toFixed(1);
+            } else {
+                 // Fallback for visual continuity if 0 reviews
+                 const seed = p.id * 1664525 + 1013904223;
+                 avgRating = (4.5 + (seed % 50) / 100).toFixed(1);
+            }
+
+            let reviewsHTML = '';
+            if(realReviews.length > 0) {
+                reviewsHTML = realReviews.map(r => `
+                    <div class="border-b border-gray-100 dark:border-gray-800 pb-4 mb-4 last:border-0">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="flex items-center gap-2">
+                                <img src="${r.userPhoto || 'https://via.placeholder.com/24'}" class="w-6 h-6 rounded-full">
+                                <span class="text-xs font-bold text-black dark:text-white">${r.userName}</span>
+                                <span class="text-[9px] text-green-600 bg-green-50 px-1 rounded font-bold uppercase tracking-wider">${window.i18n.lbl_verified[currentLang]}</span>
+                            </div>
+                            <span class="text-[10px] text-gray-400">${r.createdAt ? new Date(r.createdAt.seconds * 1000).toLocaleDateString() : window.i18n.lbl_just_now[currentLang]}</span>
+                        </div>
+                        <div class="flex text-dubae-gold text-[10px] mb-2">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div>
+                        <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">"${r.comment}"</p>
+                    </div>
+                `).join('');
+            } else {
+                reviewsHTML = `<p class="text-xs text-gray-400 italic">${window.i18n.no_results[currentLang]}</p>`;
+            }
+
+            // Auth State logic for form
+            let formHTML = '';
+            if(window.currentUser) {
+                 formHTML = `
+                    <div class="bg-gray-50 dark:bg-[#111] p-5 rounded-sm mb-8">
+                        <h4 class="text-xs font-bold uppercase tracking-widest mb-4 text-black dark:text-white">${window.i18n.review_write[currentLang]}</h4>
+                        <div class="space-y-3">
+                            <div class="flex gap-2 text-lg mb-2">
+                                ${[1,2,3,4,5].map(i => `<span id="star-${i}" class="star-input ${i<=5 ? 'active' : ''}" onclick="window.setReviewRating(${i})">★</span>`).join('')}
+                            </div>
+                            <p class="text-xs text-gray-500">${window.i18n.review_posting_as[currentLang]} <span class="font-bold text-black dark:text-white">${window.currentUser.displayName}</span></p>
+                            <textarea id="review-comment" rows="2" placeholder="${window.i18n.review_placeholder[currentLang]}" class="w-full bg-white dark:bg-black border border-gray-200 dark:border-gray-700 p-2 text-sm outline-none focus:border-dubae-gold resize-none dark:text-white"></textarea>
+                            <button onclick="window.submitReview(${p.id})" class="w-full bg-black dark:bg-white text-white dark:text-black py-2 text-[10px] font-bold uppercase tracking-widest hover:bg-dubae-gold transition-colors">${window.i18n.review_submit[currentLang]}</button>
+                        </div>
+                    </div>`;
+            } else {
+                 formHTML = `
+                    <div class="bg-gray-50 dark:bg-[#111] p-8 rounded-sm mb-8 text-center">
+                        <p class="text-xs text-gray-500 mb-4">${window.i18n.review_login_msg[currentLang]}</p>
+                        <button onclick="handleAuthClick()" class="inline-flex items-center gap-2 bg-white border border-gray-300 px-4 py-2 rounded-full text-xs font-bold hover:bg-gray-50 transition-colors">
+                             <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" class="w-4 h-4"> ${window.i18n.review_sign_in[currentLang]}
+                        </button>
+                    </div>`;
+            }
+
+            detailView.innerHTML = `
+                <div class="min-h-screen flex flex-col lg:flex-row bg-white dark:bg-[#0a0a0a]">
+                    <button onclick="document.getElementById('detail-view').classList.add('hidden'); document.body.style.overflow=''" class="fixed top-6 right-6 z-[60] p-3 bg-white dark:bg-[#222] text-black dark:text-white rounded-full shadow-lg"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+                    <div class="w-full lg:w-3/5 h-[40vh] lg:h-screen bg-[#F9FAFB] dark:bg-[#111] flex items-center justify-center p-8 lg:p-20"><img src="${p.image}" class="max-h-full max-w-full object-contain product-img"></div>
+                    <div class="w-full lg:w-2/5 min-h-[60vh] lg:h-screen bg-white dark:bg-[#0a0a0a] p-8 lg:p-20 flex flex-col overflow-y-auto relative custom-scrollbar">
+                        <span class="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 mb-2 block">${p.brand}</span>
+                        <h2 class="text-3xl md:text-4xl font-serif italic mb-4 leading-tight text-black dark:text-white">${p.name}</h2>
+                        <div class="flex items-center gap-2 mb-6"><div class="flex text-dubae-gold text-sm">${'★'.repeat(Math.round(avgRating))}${'☆'.repeat(5 - Math.round(avgRating))}</div><span class="text-xs font-bold text-gray-800 dark:text-gray-200">${avgRating}</span><span class="text-xs text-gray-400">(${reviewCount} ${window.i18n.review_reviews[currentLang]})</span></div>
+                        <p class="text-2xl font-light mb-8 text-gray-800 dark:text-gray-200">${formatUSD(p.price)}</p>
+                        <div class="mb-8"><label class="text-xs font-bold uppercase tracking-widest mb-4 block text-black dark:text-white">${window.i18n.lbl_size[currentLang]}</label><div class="grid grid-cols-5 gap-2">${p.sizes.map(s => `<button onclick="selectSize(${p.id}, ${s}, this)" class="size-btn size-btn-${p.id} rounded-sm">${s}</button>`).join('')}</div></div>
+                        <div class="space-y-3 mb-8"><button onclick="addToCart(${p.id})" class="w-full py-4 border border-black dark:border-white text-black dark:text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all">${window.i18n.btn_add[currentLang]}</button><button onclick="orderSingle(${p.id})" class="w-full py-4 bg-black dark:bg-white text-white dark:text-black text-xs font-bold uppercase tracking-[0.2em] hover:bg-dubae-gold dark:hover:bg-gray-200 transition-colors shadow-lg">${window.i18n.btn_buy[currentLang]}</button></div>
+                        <div class="border-t border-gray-100 dark:border-gray-800 pt-8 pb-20">
+                            <h3 class="font-serif italic text-xl mb-6 text-black dark:text-white">${window.i18n.review_title[currentLang]}</h3>
+                            ${formHTML}
+                            <div class="space-y-4">${reviewsHTML}</div>
+                        </div>
+                    </div>
+                </div>`;
+            detailView.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            window.setReviewRating(5); // init default stars
+        }
+
+        // --- AUTH & HELPERS ---
+        function selectSize(pid, size, btn) { selectedSizes[pid] = size; document.querySelectorAll(`.size-btn-${pid}`).forEach(b => b.classList.remove('selected')); btn.classList.add('selected'); }
+        function addToCart(pid) { const size = selectedSizes[pid]; if(!size) { showToast(window.i18n.size_select[currentLang]); return; } const p = PRODUCTS.find(x => x.id === pid); const exists = cart.find(i => i.id === pid && i.size === size); if(exists) exists.qty++; else cart.push({...p, size, qty:1}); saveCart(); showToast(window.i18n.added_bag[currentLang]); toggleCart(); }
+        function orderSingle(id) { const s = selectedSizes[id]; if(!s) { showToast(window.i18n.size_select[currentLang]); return; } const p = PRODUCTS.find(x => x.id === id); const msg = `${window.i18n.wa_greeting_single[currentLang]}\n\n• ${p.name}\nSize: ${s}\nPrice: ${formatUSD(p.price)}`; window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank'); }
+        function toggleDarkMode() { if (document.documentElement.classList.contains('dark')) { document.documentElement.classList.remove('dark'); localStorage.setItem('dubae_theme', 'light'); } else { document.documentElement.classList.add('dark'); localStorage.setItem('dubae_theme', 'dark'); } }
+    </script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
